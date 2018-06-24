@@ -1,0 +1,21 @@
+\begin{frame}<1-| handout:0>{Cryptography Primitives}
+    \begin{block}{Pedersen Commitments}
+        A \emph{Pedersen commitment scheme} ($\mathcal{PC}$)  allows one to commit to a value while keeping it hidden to others, with the ability to reveal the committed value later. A $\mathcal{PC}$ achieves unconditionally hiding and computationally binding.\\
+        Let $s$ be a secret value, $r$ a random value and $g,h$ generators of a group $G_q$, a \emph{Pedersen commitment} on value s is:
+        $$c := g^s h^r$$
+    \end{block}
+\end{frame}
+
+\begin{frame}<1-| handout:0>{Cryptography Primitives}
+    \only<1>{\begin{block}{Zero-Knowledge Protocol}
+        A Zero-Knowledge protocol is a method by which one party (the prover) can prove to another party (the verifier) that a given statement is true, without conveying any information apart from the fact that the statement is indeed true.
+        $$PoK\{\mathtt{(a,b)}:\mathtt{\mathcal{S}(a,b)}\}$$
+    \end{block}}
+    \only<2>{\begin{block}{Necessary ZKPs}
+        \begin{itemize}
+            \item Discrete logarithm: $PoK\{x: h = g^x\}$
+            \item OR sentence
+            \item AND sentence
+        \end{itemize}
+    \end{block}}
+\end{frame}

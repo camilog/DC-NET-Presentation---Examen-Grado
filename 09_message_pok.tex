@@ -1,0 +1,11 @@
+\begin{frame}{Real Round - Proof of Knowledge on $M_i$}
+    \begin{block}<1->{Informal Property}
+        Participant will generate a commitment for $M_i$ using the commitments created in the previous step, and with that a PoK for the message $M_i$ inside that commitment.
+    \end{block}
+    \begin{block}<2>{Data Sending}
+        $P_i$ calculates $c_M = f(c_m, c_b, c_\mathtt{pad})$\\
+        $P_i$ extracts the value $r_M$ inside $c_M$ calculated before.\\
+        $P_i$ generates: $\mathtt{PoK}_M = PoK\{(M, r_M): c_M = g^{M} h^{r_M}\}$\\
+        $P_i$ sends the proof, and the rest of the participants need to check that the proof is valid using the commitments received in the previous step.
+    \end{block}
+\end{frame}

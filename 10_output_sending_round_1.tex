@@ -1,0 +1,18 @@
+\begin{frame}{Real Round - Sending $O_i$ in round 1}
+    \begin{block}{Informal Property}
+        Participant generates a commitment and a PoK for $O_i$ (established before), and the rest of the participants will check the proof using the values of commitments received in previous steps. $P_i$ will send this proof and the value $O_i$ itself.
+        
+        After that, each $O_i$ of the participants will be added in order to construct the round message $C^{(1)}$.
+    \end{block}
+\end{frame}
+
+\begin{frame}{Real Round - Sending $O_i$ in round 1}
+    \begin{block}{Data Sending}
+        $P_i$ calculates $r_{O} = r_{M} + r_{K}$\\
+        Then calculates the commitment $c_{r_O} = h^{r_O}$\\
+        Generates $\mathtt{PoK_{r_O}} = PoK\{r_O:c_{r_O} = h^{r_O}\}$ and sends it along $O_i$ to the rest of the room.\\
+        The rest of participants calculate commitment for each $O_j$ received as $c_O = c_K \cdot c_M$\\
+        After this will calculate the value $\beta = c_O \cdot (g^O)^{-1}$, and with this value will verify $\mathtt{PoK_{r_O}}$\\
+        Finally will calculate $C^{(1)} = \sum O_j$
+    \end{block}
+\end{frame}

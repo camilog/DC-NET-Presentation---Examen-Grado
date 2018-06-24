@@ -1,0 +1,14 @@
+\begin{frame}{Real Round - Message values}
+    \begin{block}<1->{Sending message in current round}
+    $m_i = m$; plain message to send\\
+    $\texttt{pad}_i \stackrel{\$}{=} \texttt{pad}$\\
+    $b_i = 1$\\
+    $O_i = M_i + K_i$
+    \end{block}
+    \begin{block}<2>{No message in this round}
+    $m_i = 0$\\
+    $\texttt{pad}_i = 0$\\
+    $b_i = 0$\\
+    $O_i = K_i$
+    \end{block}
+\end{frame}

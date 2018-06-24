@@ -1,0 +1,10 @@
+\begin{frame}{Collision Round}
+    \begin{block}{$t > 1$}
+        All the participants that sent a message in this round need to calculate: $\overline{M} = M^*/t$\\
+        If his message $M_i < \overline{M}$, will resend his message in the round $2k$\\
+        If not, the participant will resend his message in the round $2k+1$ (which is virtual, so technically won't resend his message).
+    \end{block}
+    \begin{block}<2>{Aftermath}
+        The current round is over, and a new round (if it is the case) will start, redoing all the previous steps described.
+    \end{block}
+\end{frame}

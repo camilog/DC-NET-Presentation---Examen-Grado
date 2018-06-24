@@ -1,0 +1,11 @@
+\begin{frame}{Real Round - Message $M_i$ Format Proof}
+    \begin{block}<1->{Informal Property}
+        Participant must prove that is sending a message ($b_i = 1$) or no message at all ($b_i = 0 \land m_i = 0$). 
+    \end{block}
+    \begin{block}<2>{Data Sending}
+        $P_i$ chooses randomly: $r_m, r_b, r_{\mathtt{pad}}$\\
+        $P_i$ calculates: $c_m = g^{m_i} h^{r_m}, c_b = g^{b_i} h^{r_b}, c_{\mathtt{pad}} = g^{\mathtt{pad}_i} h^{r_{\mathtt{pad}}}$\\
+        $P_i$ generates: $\mathtt{PoK}_{\mathtt{format}} = PoK\{(r_m, r_b): (g^{-1} c_b = h^{r_b}) \lor (c_b = h^{r_b} \land c_m = h^{r_m})\}$\\
+        $P_i$ sends the proof and the commitments, and with all that the rest of the participants can check that the proof is valid.
+    \end{block}
+\end{frame}

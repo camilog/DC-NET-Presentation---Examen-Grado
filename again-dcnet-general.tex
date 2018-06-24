@@ -1,0 +1,32 @@
+\begin{frame}{General DC-NET}
+
+\begin{columns}[c]
+    \column{.5\textwidth}
+    \centering
+    \includegraphics[scale=0.4]{images/dcnet-general-03.png}
+    \vspace{.5cm}
+    \setbeamercolor{postit}{fg=black,bg=yellow}
+    \begin{beamercolorbox}[sep=1em,wd=3cm,center]{postit}
+        $K_{ij} = -K_{ji}$
+    \end{beamercolorbox}
+    \column{.5\textwidth}
+    \centering
+    \begin{block}{Output Messages}
+      \footnotesize
+      \begin{itemize}
+      \setlength{\itemindent}{-.25in}
+          \item[] \textcolor{blue}{$O_A = K_{AB} + K_{AC} + K_{AD} + K_{AE} + M_1$}
+          \item[] \textcolor{green}{$O_B = K_{BA} + K_{BC} + K_{BD} + K_{BE} + M_2$}
+          \item[] \textcolor{orange}{$O_C = K_{CA} + K_{CB} + K_{CD} + K_{CE} + M_3$}
+          \item[] \textcolor{yellow}{$O_D = K_{DA} + K_{DB} + K_{DC} + K_{DE} + M_4$}
+          \item[] \textcolor{red}{$O_E = K_{EA} + K_{EB} + K_{EC} + K_{ED} + M_5$}
+      \end{itemize}
+    \end{block}
+    
+    \begin{exampleblock}{Obtain Message}
+    \centering
+    $C = \sum O_i = M_1 + M_2 + M_3 + M_4 + M_5$
+    \end{exampleblock}
+\end{columns}
+
+\end{frame}

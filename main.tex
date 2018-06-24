@@ -1,0 +1,123 @@
+\documentclass{beamer}
+
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{comment}
+\usepackage{color}
+\usepackage{pdfpages}
+\usepackage{amsmath}
+\usepackage{appendixnumberbeamer}
+
+\usetheme{Rochester}
+\usecolortheme{beaver}
+\usefonttheme{structurebold}
+\setbeamertemplate{footline}[frame number]
+\setbeamertemplate{navigation symbols}{}
+
+\title{Hiding in the Crowd}
+\subtitle{Design and Implementation of a DC-Net-based\\Anonymous Messaging System}
+
+\author{Camilo José Gómez Núñez}
+
+\institute[]
+{Departamento de Ciencias de la Computación\\
+Facultad de Ciencias Físicas y Matemáticas\\
+Universidad de Chile}
+
+\date{June, 28th 2018}
+
+\AtBeginSection[]
+{
+  \begin{frame}<beamer>{Outline}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+{
+\setbeamercolor{background canvas}{bg=black}
+\begin{frame}[plain]
+\vspace{4.45em}
+\begin{center}
+\only<1>{\textbf{\color{red}\fontfamily{cmtt}\selectfont\Huge{A N O N Y M I T Y}}}
+\only<2>{\textbf{\color{red}\fontfamily{cmtt}\selectfont\Huge{(n -) A N O N Y M I T Y}}}
+\only<3->{\textbf{\color{red}\fontfamily{cmtt}\selectfont\Huge{A N O N Y M I T Y}}}
+
+\only<4->{\color{red}\rule{20em}{1pt}}
+
+\only<4->{\textbf{\color{red}\fontfamily{cmtt}\selectfont\Huge{\rotatebox{180}{Y T I M Y N O N A}}}}
+\end{center}
+\end{frame}
+}
+
+\begin{frame}{Anonymity today}
+    \centering
+    \includegraphics<2>[scale=0.17]{images/tor.png}
+\end{frame}
+
+\begin{frame}{Contents}
+  \tableofcontents
+\end{frame}
+
+\input{01_general_dcnet}
+\input{02_dcnet_problems-inicial}
+
+\input{05_key_sharing}
+\input{dcnet-problems-final}
+\input{again-dcnet-general}
+\input{03_collision_resolution_example}
+\input{06_message_format}
+\input{08_message_format_proof}
+%
+%\input{07_message_values}
+%
+%\input{09_message_pok}
+%\input{10_output_sending_round_1}
+%\input{11_output_sending_father_real}
+%\input{12_output_sending_father_virtual}
+\input{12_resume_real_round}
+%\input{13_virtual_round}
+%\input{14_resolution_message_split}
+%\input{15_resolution_collision_size}
+%\input{16_resolution_no_collision_round}
+%\input{17_resolution_collision_decision}
+\input{18_implementation_tools}
+\input{19_implementation_directory_participants}
+\input{20_implementation_cryptography}
+\input{21_implementation_api_app}
+\input{22_experiments_setting}
+\input{23_experiments_results}
+\input{24_conclusion_future_work}
+
+{
+\setbeamercolor{background canvas}{bg=black}
+\begin{frame}[plain]
+\vspace{4.45em}
+\begin{center}
+\textbf{\color{red}\fontfamily{cmtt}\selectfont\Huge{A N O N Y M I T Y}}
+
+{\color{red}\rule{20em}{1pt}}
+
+{\textbf{\color{red}\fontfamily{cmtt}\selectfont\Huge{\rotatebox{180}{Y T I M Y N O N A}}}}
+
+\end{center}
+\end{frame}
+}
+
+\date{\texttt{cjgomez@dcc.uchile.cl}\\
+\texttt{@milogomez\_\_}}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\appendix
+\input{04_cryptography}
+
+
+\end{document}

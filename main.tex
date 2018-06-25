@@ -7,6 +7,7 @@
 \usepackage{pdfpages}
 \usepackage{amsmath}
 \usepackage{appendixnumberbeamer}
+\usepackage{ragged2e}
 
 \usetheme{Rochester}
 \usecolortheme{beaver}
@@ -45,12 +46,12 @@ Universidad de Chile}
 \vspace{4.45em}
 \begin{center}
 \only<1>{\textbf{\color{red}\fontfamily{cmtt}\selectfont\Huge{A N O N Y M I T Y}}}
-\only<2>{\textbf{\color{red}\fontfamily{cmtt}\selectfont\Huge{(n -) A N O N Y M I T Y}}}
-\only<3->{\textbf{\color{red}\fontfamily{cmtt}\selectfont\Huge{A N O N Y M I T Y}}}
+%\only<2>{\textbf{\color{red}\fontfamily{cmtt}\selectfont\Huge{(n -) A N O N Y M I T Y}}}
+%\only<3->{\textbf{\color{red}\fontfamily{cmtt}\selectfont\Huge{A N O N Y M I T Y}}}
 
-\only<4->{\color{red}\rule{20em}{1pt}}
+%\only<4->{\color{red}\rule{20em}{1pt}}
 
-\only<4->{\textbf{\color{red}\fontfamily{cmtt}\selectfont\Huge{\rotatebox{180}{Y T I M Y N O N A}}}}
+%\only<4->{\textbf{\color{red}\fontfamily{cmtt}\selectfont\Huge{\rotatebox{180}{Y T I M Y N O N A}}}}
 \end{center}
 \end{frame}
 }
@@ -60,19 +61,38 @@ Universidad de Chile}
     \includegraphics<2>[scale=0.17]{images/tor.png}
 \end{frame}
 
+\begin{frame}{Thesis' Objective}
+\justify
+\huge{Provide an \textbf{alternative system to \emph{TOR}} that would be useful in some bounded scenarios that doesn't possess the limitations that \emph{onion-routing} has.}
+\end{frame}
+
 \begin{frame}{Contents}
   \tableofcontents
 \end{frame}
 
+\begin{frame}{Comparison between TOR and DC-NET}
+
+\begin{table}[]
+\centering
+\begin{tabular}{l|l|l|}
+\cline{2-3}
+                                      & \multicolumn{1}{c|}{\textbf{ADVANTAGES}}                                                                                     & \multicolumn{1}{c|}{\textbf{DISADVANTAGES}}                                                                             \\ \hline
+\multicolumn{1}{|c|}{\textbf{TOR}}    & \begin{tabular}[c]{@{}l@{}}- Fast.\\ - Scalable.\end{tabular}                                                                & \begin{tabular}[c]{@{}l@{}}- Insecure against \\   global adversary.\\ - Need trust in third \\   parties.\end{tabular} \\ \hline
+\multicolumn{1}{|l|}{\textbf{DC-NET}} & \begin{tabular}[c]{@{}l@{}}- Secure against \\   global adversary.\\ - Doesn't need trust\\   in third parties.\end{tabular} & \begin{tabular}[c]{@{}l@{}}- Robustness. (?)\\ - Efficiency. (?)\end{tabular}                                           \\ \hline
+\end{tabular}
+\end{table}
+
+\end{frame}
+
 \input{01_general_dcnet}
-\input{02_dcnet_problems-inicial}
+% \input{02_dcnet_problems-inicial}
 
 \input{05_key_sharing}
 \input{dcnet-problems-final}
 \input{again-dcnet-general}
 \input{03_collision_resolution_example}
 \input{06_message_format}
-\input{08_message_format_proof}
+%\input{08_message_format_proof}
 %
 %\input{07_message_values}
 %
@@ -86,28 +106,58 @@ Universidad de Chile}
 %\input{15_resolution_collision_size}
 %\input{16_resolution_no_collision_round}
 %\input{17_resolution_collision_decision}
+
+\begin{frame}{Comparison between TOR and DC-NET}
+
+\begin{table}[]
+\centering
+\begin{tabular}{l|l|l|}
+\cline{2-3}
+                                      & \multicolumn{1}{c|}{\textbf{ADVANTAGES}}                                                                                     & \multicolumn{1}{c|}{\textbf{DISADVANTAGES}}                                                                             \\ \hline
+\multicolumn{1}{|c|}{\textbf{TOR}}    & \begin{tabular}[c]{@{}l@{}}- Fast.\\ - Scalable.\end{tabular}                                                                & \begin{tabular}[c]{@{}l@{}}- Insecure against \\   global adversary.\\ - Need trust in third \\   parties.\end{tabular} \\ \hline
+\multicolumn{1}{|l|}{\textbf{DC-NET}} & \begin{tabular}[c]{@{}l@{}}- Secure against \\   global adversary.\\ - Doesn't need trust\\   in third parties.\end{tabular} & \begin{tabular}[c]{@{}l@{}}- Robustness. (\checkmark)\\ - Efficiency. (?)\end{tabular}                                           \\ \hline
+\end{tabular}
+\end{table}
+
+\end{frame}
+
 \input{18_implementation_tools}
 \input{19_implementation_directory_participants}
 \input{20_implementation_cryptography}
 \input{21_implementation_api_app}
 \input{22_experiments_setting}
 \input{23_experiments_results}
+
+\begin{frame}{Comparison between TOR and DC-NET}
+
+\begin{table}[]
+\centering
+\begin{tabular}{l|l|l|}
+\cline{2-3}
+                                      & \multicolumn{1}{c|}{\textbf{ADVANTAGES}}                                                                                     & \multicolumn{1}{c|}{\textbf{DISADVANTAGES}}                                                                             \\ \hline
+\multicolumn{1}{|c|}{\textbf{TOR}}    & \begin{tabular}[c]{@{}l@{}}- Fast.\\ - Scalable.\end{tabular}                                                                & \begin{tabular}[c]{@{}l@{}}- Insecure against \\   global adversary.\\ - Need trust in third \\   parties.\end{tabular} \\ \hline
+\multicolumn{1}{|l|}{\textbf{DC-NET}} & \begin{tabular}[c]{@{}l@{}}- Secure against \\   global adversary.\\ - Doesn't need trust\\   in third parties.\end{tabular} & \begin{tabular}[c]{@{}l@{}}- Robustness. (\checkmark)\\ - Efficiency. (\checkmark*)\end{tabular}                                           \\ \hline
+\end{tabular}
+\end{table}
+
+\end{frame}
+
 \input{24_conclusion_future_work}
 
-{
-\setbeamercolor{background canvas}{bg=black}
-\begin{frame}[plain]
-\vspace{4.45em}
-\begin{center}
-\textbf{\color{red}\fontfamily{cmtt}\selectfont\Huge{A N O N Y M I T Y}}
+%{
+%\setbeamercolor{background canvas}{bg=black}
+%\begin{frame}[plain]
+%\vspace{4.45em}
+%\begin{center}
+%\textbf{\color{red}\fontfamily{cmtt}\selectfont\Huge{A N O N Y M I T Y}}
 
-{\color{red}\rule{20em}{1pt}}
+%{\color{red}\rule{20em}{1pt}}
 
-{\textbf{\color{red}\fontfamily{cmtt}\selectfont\Huge{\rotatebox{180}{Y T I M Y N O N A}}}}
+%{\textbf{\color{red}\fontfamily{cmtt}\selectfont\Huge{\rotatebox{180}{Y T I M Y N O N A}}}}
 
-\end{center}
-\end{frame}
-}
+%\end{center}
+%\end{frame}
+%}
 
 \date{\texttt{cjgomez@dcc.uchile.cl}\\
 \texttt{@milogomez\_\_}}

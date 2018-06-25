@@ -1,10 +1,23 @@
-\begin{frame}{Real Round Summary}
+\begin{frame}{Real Round $k$ Summary}
     \begin{enumerate}
-        \item Key exchange.
-        \item Set message values.
+        \item Key Exchange.
+        \item Set Message $M_i$.
         \item Proof for correct format of $M_i$.
-        \item Proof of knowledge on $M_i$.
-        \item $O_i$ sending (depending it is round 1, or if their father round is real or virtual)
+        \item Proof of Knowledge on $m_i$.
+        \item $O_i$ sending along with correctness proof.
         \item Construct round message $C^{(k)}$
+        \item Round Resolution (collision or single message reception).
     \end{enumerate}
+\end{frame}
+
+\begin{frame}{DC-NET Robustness Problems}
+    
+    \begin{exampleblock}{Cheating}
+        Malicious participants send incorrect values in their output messages.
+    \end{exampleblock}
+    
+    \begin{exampleblock}{Collision}
+        More than one participant send a message in their output messages.
+    \end{exampleblock}
+    
 \end{frame}

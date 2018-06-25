@@ -1,7 +1,28 @@
 \begin{frame}{Real Round - $M_i$ Format - Identify Collisions}
-    \centering
-    If participant $P_i$ will send a message in this round, $M_i$:
-    \includegraphics[scale=.55]{images/message-format(1).pdf}\\
-    If not, $M_i$:
-    \includegraphics[scale=.55]{images/message-format-nomessage.pdf}
+
+\begin{table}[]
+\centering
+\begin{tabular}{c|c|c|c|c|c|c|llll}
+\cline{2-7}
+$\, \ \ \ M_i = $ & $0 \dotsc 0$ & $\, \ \qquad m_i \, \ \qquad$ & $0 \dotsc 0$ & \ \ $pad_i \ \ $ & $0 \dotsc 0$ & $b_i$ &  &  &  &  \\ \cline{2-7}
+\end{tabular}
+\end{table}
+
+\begin{table}[]
+\centering
+\begin{tabular}{ccccccrllll}
+\cline{2-7}
+\multicolumn{1}{c|}{$\ \ \ M_1 = $}      & \multicolumn{1}{c|}{$0 \dotsc 0$} & \multicolumn{1}{c|}{$m_1$}             & \multicolumn{1}{c|}{$0 \dotsc 0$} & \multicolumn{1}{c|}{$pad_1$}    & \multicolumn{1}{c|}{$0 \dotsc 0$} & \multicolumn{1}{r|}{$1$}  &  &  &  &  \\ \cline{2-7}
+                                   &                                   &                                        &                                   &                                 &                                   &                           &  &  &  &  \\ \cline{2-7}
+\multicolumn{1}{c|}{$\ \ \ M_2 = $}     & \multicolumn{1}{c|}{$0 \dotsc 0$} & \multicolumn{1}{c|}{$m_2$}             & \multicolumn{1}{c|}{$0 \dotsc 0$} & \multicolumn{1}{c|}{$pad_2$}    & \multicolumn{1}{c|}{$0 \dotsc 0$} & \multicolumn{1}{r|}{$1$}  &  &  &  &  \\ \cline{2-7}
+                                   &                                   &                                        &                                   &                                 &                                   &                           &  &  &  &  \\ \cline{2-7}
+\multicolumn{1}{c|}{$\ \ \ M_3 = $}      & \multicolumn{1}{c|}{$0 \dotsc 0$} & \multicolumn{1}{c|}{$0$}               & \multicolumn{1}{c|}{$0 \dotsc 0$} & \multicolumn{1}{c|}{$pad_3$}    & \multicolumn{1}{c|}{$0 \dotsc 0$} & \multicolumn{1}{r|}{$0$}  &  &  &  &  \\ \cline{2-7}
+                                   &                                   &                                        &                                   &                                 &                                   &                           &  &  &  &  \\ \cline{2-7}
+\multicolumn{1}{c|}{$\ \ \ M_4 = $}      & \multicolumn{1}{c|}{$0 \dotsc 0$} & \multicolumn{1}{c|}{$m_4$}             & \multicolumn{1}{c|}{$0 \dotsc 0$} & \multicolumn{1}{c|}{$pad_4$}    & \multicolumn{1}{c|}{$0 \dotsc 0$} & \multicolumn{1}{r|}{$1$}  &  &  &  &  \\ \cline{2-7}
+\multicolumn{1}{l}{}               & \multicolumn{1}{l}{}              & \multicolumn{1}{l}{}                   & \multicolumn{1}{l}{}              & \multicolumn{1}{l}{}            & \multicolumn{1}{l}{}              &                           &  &  &  &  \\ \cline{2-7}
+
+\multicolumn{1}{c|}{$\sum M_i = $} & \multicolumn{1}{c|}{$0 \dotsc 0$} & \multicolumn{1}{c|}{$m_1 + m_2 + m_4$} & \multicolumn{1}{c|}{$0 \dotsc 0$} & \multicolumn{1}{c|}{$\sum pad$} & \multicolumn{1}{c|}{$0 \dotsc 0$} & \multicolumn{1}{r|}{$11$} &  &  &  &  \\ \cline{2-7}
+\end{tabular}
+\end{table}
+
 \end{frame}

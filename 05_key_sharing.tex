@@ -16,18 +16,24 @@
             \end{beamercolorbox}
         \column{.5\textwidth}
             \begin{block}<2->{Commitments on Keys}
-                \centering
-                $c_{k,a} = g^{K_a} h^{r_{k,a}}$\\
-                $c_{k,b} = g^{K_b} h^{r_{k,b}}$\\
-                $c_{k,c} = g^{K_c} h^{r_{k,c}}$
+                    \centering
+                    \includegraphics<2-2>[scale=0.5]{images/commitment.png}
+                    \only<3>
+                    {\centering
+                    $c_{k,a} = g^{K_a} h^{r_{k,a}}$\\
+                    $c_{k,b} = g^{K_b} h^{r_{k,b}}$\\
+                    $c_{k,c} = g^{K_c} h^{r_{k,c}}$}
             \end{block}
-            \begin{block}<3->{PoK on Keys}
+            \begin{block}<2->{PoK on Keys}
                 \centering
+                \includegraphics<2-2>[scale=0.5]{images/pok.png}
+                \only<3>
+                {\centering
                 \scriptsize$\mathtt{PoK}_{k,a} = PoK\{(K_a, r_{k,a}): c_{k,a} = g^{K_a} h^{r_{k,a}}\}$\\
                 \scriptsize$\mathtt{PoK}_{k,b} = PoK\{(K_b, r_{k,b}): c_{k,b} = g^{K_b} h^{r_{k,b}}\}$\\
-                \scriptsize$\mathtt{PoK}_{k,c} = PoK\{(K_c, r_{k,c}): c_{k,c} = g^{K_c} h^{r_{k,c}}\}$\\
+                \scriptsize$\mathtt{PoK}_{k,c} = PoK\{(K_c, r_{k,c}): c_{k,c} = g^{K_c} h^{r_{k,c}}\}$\\}
             \end{block}
-            \begin{exampleblock}<4->{Check values}
+            \begin{exampleblock}<3->{Check values}
                 \centering
                 $\prod c_{k,i} \overset{?}{=} 1$
             \end{exampleblock}

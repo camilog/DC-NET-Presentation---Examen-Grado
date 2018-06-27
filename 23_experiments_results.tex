@@ -1,22 +1,55 @@
 \begin{frame}{Protocol Overhead (Additional Info for Robustness)}
+    In each round, every participant must send to the rest of the room the following $\mathcal{T}$:
     \begin{itemize}
-        \item Commitment and PoK on shared key.
-        \item Commitment and PoK on $M_i$ format.
+        \item Commitment and PoK on round key.
+        \item Commitments and PoK on $M_i$ format.
         \item PoK on $m_i$.
         \item $O_i$ and PoK on correctness of $O_i$.
+    \end{itemize}
+    \begin{itemize}
+        \item 22 elements from the group $\mathbb{G}$.
+        \item Group $\mathbb{G}$ established by longest possible message ($\delta$: bit-length of maximum element in $\mathbb{G}$).
     \end{itemize}
     
     %\centering
     %\includegraphics[scale=0.6]{images/bandwidth.png}
 \end{frame}
 
+\begin{frame}{Protocol Overhead - Comparison Chart}
+
+\begin{table}[]
+\centering
+\begin{tabular}{cc|c|c|c|}
+\cline{3-5}
+\multicolumn{1}{l}{}                                                                                              & \multicolumn{1}{l|}{}            & \multicolumn{3}{c|}{n}                                                                                                     \\ \hline
+\multicolumn{1}{|c|}{$\ell$}                                                                                      & protocol                         & 3                                      & 15                                      & 30                                      \\ \hline
+\multicolumn{1}{|c|}{}                                                                                            & \cellcolor[HTML]{FFFC9E}dc-net   & \multicolumn{3}{c|}{\cellcolor[HTML]{FFFC9E}$\mathcal{T}(\ell) \cdot (n - 1) \cdot \#$rounds}                              \\ \hline
+\multicolumn{1}{|c|}{}                                                                                            & \cellcolor[HTML]{FFFC9E}dc-net   & \cellcolor[HTML]{FFFC9E}17 kB          & \cellcolor[HTML]{FFFC9E}590.8 kB        & \cellcolor[HTML]{FFFC9E}2.5 MB          \\ \cline{2-5} 
+\multicolumn{1}{|c|}{}                                                                                            & \cellcolor[HTML]{FE996B}normal   & \cellcolor[HTML]{FE996B}$2 \cdot \ell$ & \cellcolor[HTML]{FE996B}$14 \cdot \ell$ & \cellcolor[HTML]{FE996B}$29 \cdot \ell$ \\ \cline{2-5} 
+\multicolumn{1}{|c|}{\multirow{-3}{*}{\begin{tabular}[c]{@{}c@{}}\textless{}118\\ ($\delta$: 1024)\end{tabular}}} & \cellcolor[HTML]{CBCEFB}overhead & \cellcolor[HTML]{CBCEFB}$8500 / \ell$  & \cellcolor[HTML]{CBCEFB}$42000 / \ell$  & \cellcolor[HTML]{CBCEFB}$86000 / \ell$  \\ \hline
+\multicolumn{1}{|c|}{}                                                                                            & \cellcolor[HTML]{FFFC9E}dc-net   & \cellcolor[HTML]{FFFC9E}19.8 kB        & \cellcolor[HTML]{FFFC9E}698.6 kB        & \cellcolor[HTML]{FFFC9E}2.9 MB          \\ \cline{2-5} 
+\multicolumn{1}{|c|}{}                                                                                            & \cellcolor[HTML]{FE996B}normal   & \cellcolor[HTML]{FE996B}280            & \cellcolor[HTML]{FE996B}1.9 kB          & \cellcolor[HTML]{FE996B}4.1 kB          \\ \cline{2-5} 
+\multicolumn{1}{|c|}{\multirow{-3}{*}{\begin{tabular}[c]{@{}c@{}}140\\ ($\delta$: 1210)\end{tabular}}}            & \cellcolor[HTML]{CBCEFB}overhead & \cellcolor[HTML]{CBCEFB}71.3           & \cellcolor[HTML]{CBCEFB}356.5           & \cellcolor[HTML]{CBCEFB}713             \\ \hline
+\multicolumn{1}{|c|}{}                                                                                            & \cellcolor[HTML]{FFFC9E}dc-net   & \cellcolor[HTML]{FFFC9E}27.8 kB        & \cellcolor[HTML]{FFFC9E}975.8 kB        & \cellcolor[HTML]{FFFC9E}4.1 MB          \\ \cline{2-5} 
+\multicolumn{1}{|c|}{}                                                                                            & \cellcolor[HTML]{FE996B}normal   & \cellcolor[HTML]{FE996B}400            & \cellcolor[HTML]{FE996B}2.8 kB          & \cellcolor[HTML]{FE996B}5.8 kB          \\ \cline{2-5} 
+\multicolumn{1}{|c|}{\multirow{-3}{*}{\begin{tabular}[c]{@{}c@{}}200\\ ($\delta$: 1690)\end{tabular}}}            & \cellcolor[HTML]{CBCEFB}overhead & \cellcolor[HTML]{CBCEFB}69.72          & \cellcolor[HTML]{CBCEFB}348.58          & \cellcolor[HTML]{CBCEFB}697.2           \\ \hline
+\multicolumn{1}{|c|}{}                                                                                            & \cellcolor[HTML]{FFFC9E}dc-net   & \cellcolor[HTML]{FFFC9E}41 kB          & \cellcolor[HTML]{FFFC9E}1.4 MB          & \cellcolor[HTML]{FFFC9E}5.9 MB          \\ \cline{2-5} 
+\multicolumn{1}{|c|}{}                                                                                            & \cellcolor[HTML]{FE996B}normal   & \cellcolor[HTML]{FE996B}600            & \cellcolor[HTML]{FE996B}4.2 kB          & \cellcolor[HTML]{FE996B}8.7 kB          \\ \cline{2-5} 
+\multicolumn{1}{|c|}{\multirow{-3}{*}{\begin{tabular}[c]{@{}c@{}}300\\ ($\delta$: 2490)\end{tabular}}}            & \cellcolor[HTML]{CBCEFB}overhead & \cellcolor[HTML]{CBCEFB}68.48          & \cellcolor[HTML]{CBCEFB}342.4           & \cellcolor[HTML]{CBCEFB}684.8           \\ \hline
+\end{tabular}
+\end{table}
+    
+\end{frame}
+
 \begin{frame}{Experiments - Results - Code Profiling}
-    \makebox[\linewidth][c]{%
-        \begin{minipage}{\dimexpr\textwidth+4.8em\relax}
-        \raggedright
-        \includegraphics[scale=0.13]{images/profile_all.png}
-        \includegraphics[scale=0.13]{images/profile_partial.png} \end{minipage}%
-    }%
+    %\makebox[\linewidth][c]{%
+    %    \begin{minipage}{\dimexpr\textwidth+4.8em\relax}
+    %    \raggedright
+    %    \includegraphics[scale=0.13]{images/profile_all.png}
+    %    \includegraphics[scale=0.13]{images/profile_partial.png} \end{minipage}%
+    %}%
+    \centering
+    \includegraphics[scale=0.157]{images/profile_both.png}
 \end{frame}
 
 \begin{frame}{Experiments - Results - Execution Time}

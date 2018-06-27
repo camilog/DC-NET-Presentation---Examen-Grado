@@ -9,12 +9,14 @@
 \usepackage{appendixnumberbeamer}
 \usepackage{ragged2e}
 \usepackage{animate}
+\usepackage{pgfpages}
 
 \usetheme{Rochester}
 \usecolortheme{beaver}
 \usefonttheme{structurebold}
 \setbeamertemplate{footline}[frame number]
 \setbeamertemplate{navigation symbols}{}
+
 
 \title{Hiding in the Crowd}
 \subtitle{Design and Implementation of a DC-Net-based\\Anonymous Messaging System}
@@ -67,7 +69,7 @@ Universidad de Chile}
 
 \begin{frame}{Thesis' Objective}
 \justify
-\huge{Provide an \textbf{alternative system to \emph{TOR}} that would be useful in some bounded scenarios that doesn't possess the limitations that \emph{onion-routing} has.}
+\huge{Provide an \textbf{alternative system to \emph{TOR}} that (1) be useful in some restricted but useful scenarios, but (2) do not suffer from the  limitations of \emph{onion-routing}.}
 \end{frame}
 
 \begin{frame}{Contents}
@@ -84,7 +86,7 @@ Universidad de Chile}
 \cline{2-3}
                                       & \multicolumn{1}{c|}{\textbf{ADVANTAGES}}                                                                                     & \multicolumn{1}{c|}{\textbf{DISADVANTAGES}}                                                                             \\ \hline
 \multicolumn{1}{|c|}{\textbf{TOR}}    & \begin{tabular}[c]{@{}l@{}}- Fast.\\ - Scalable.\end{tabular}                                                                & \begin{tabular}[c]{@{}l@{}}- Insecure against \\   global adversary.\\ - Need trust in third \\   parties.\end{tabular} \\ \hline
-\multicolumn{1}{|l|}{\textbf{DC-NET}} & \begin{tabular}[c]{@{}l@{}}- Secure against \\   global adversary.\\ - Doesn't need trust\\   in third parties.\end{tabular} & \begin{tabular}[c]{@{}l@{}}- Robustness. (?)\\ - Efficiency. (?)\end{tabular}                                           \\ \hline
+\multicolumn{1}{|l|}{\textbf{DC-NET}} & \begin{tabular}[c]{@{}l@{}}- Secure against \\   global adversary.\\ - Doesn't need trust\\   on third parties.\end{tabular} & \begin{tabular}[c]{@{}l@{}}- Robustness. (?)\\ - Efficiency. (?)\end{tabular}                                           \\ \hline
 \end{tabular}
 \end{table}
 
@@ -120,7 +122,7 @@ Universidad de Chile}
 \cline{2-3}
                                       & \multicolumn{1}{c|}{\textbf{ADVANTAGES}}                                                                                     & \multicolumn{1}{c|}{\textbf{DISADVANTAGES}}                                                                             \\ \hline
 \multicolumn{1}{|c|}{\textbf{TOR}}    & \begin{tabular}[c]{@{}l@{}}- Fast.\\ - Scalable.\end{tabular}                                                                & \begin{tabular}[c]{@{}l@{}}- Insecure against \\   global adversary.\\ - Need trust in third \\   parties.\end{tabular} \\ \hline
-\multicolumn{1}{|l|}{\textbf{DC-NET}} & \begin{tabular}[c]{@{}l@{}}- Secure against \\   global adversary.\\ - Doesn't need trust\\   in third parties.\end{tabular} & \begin{tabular}[c]{@{}l@{}}- Robustness. (\checkmark)\\ - Efficiency. (?)\end{tabular}                                           \\ \hline
+\multicolumn{1}{|l|}{\textbf{DC-NET}} & \begin{tabular}[c]{@{}l@{}}- Secure against \\   global adversary.\\ - Doesn't need trust\\   on third parties.\end{tabular} & \begin{tabular}[c]{@{}l@{}}- Robustness. (\checkmark)\\ - Efficiency. (?)\end{tabular}                                           \\ \hline
 \end{tabular}
 \end{table}
 
@@ -141,7 +143,7 @@ Universidad de Chile}
 \cline{2-3}
                                       & \multicolumn{1}{c|}{\textbf{ADVANTAGES}}                                                                                     & \multicolumn{1}{c|}{\textbf{DISADVANTAGES}}                                                                             \\ \hline
 \multicolumn{1}{|c|}{\textbf{TOR}}    & \begin{tabular}[c]{@{}l@{}}- Fast.\\ - Scalable.\end{tabular}                                                                & \begin{tabular}[c]{@{}l@{}}- Insecure against \\   global adversary.\\ - Need trust in third \\   parties.\end{tabular} \\ \hline
-\multicolumn{1}{|l|}{\textbf{DC-NET}} & \begin{tabular}[c]{@{}l@{}}- Secure against \\   global adversary.\\ - Doesn't need trust\\   in third parties.\end{tabular} & \begin{tabular}[c]{@{}l@{}}- Robustness. (\checkmark)\\ - Efficiency. (\checkmark*)\end{tabular}                                           \\ \hline
+\multicolumn{1}{|l|}{\textbf{DC-NET}} & \begin{tabular}[c]{@{}l@{}}- Secure against \\   global adversary.\\ - Doesn't need trust\\   on third parties.\end{tabular} & \begin{tabular}[c]{@{}l@{}}- Robustness. (\checkmark)\\ - Efficiency. (\checkmark*)\end{tabular}                                           \\ \hline
 \end{tabular}
 \end{table}
 

@@ -16,13 +16,14 @@
     \begin{columns}[c]
         \column{.5\textwidth}
         \centering
-        \includegraphics[scale=0.15]<1-1>{images/mobile_first.png}
-        \includegraphics[scale=0.15]<2-2>{images/mobile_connecting.png}
+        \only<1>{\fbox{\includegraphics[scale=0.15]<1-1>{images/mobile_first.png}}}
+        \only<2>{\fbox{\includegraphics[scale=0.15]<2-2>{images/mobile_connecting.png}}}
+        \only<3>{\fbox{\includegraphics[scale=0.15]<3-3>{images/messages_arriving.jpg}}}
         
         \column{.5\textwidth}
         \centering
-        \includegraphics[scale=0.15]<1-1>{images/mobile_connect.png}
-        \includegraphics[scale=0.15]<2-2>{images/mobile_message.png}
+        \only<1>{\fbox{\includegraphics[scale=0.15]<1-1>{images/mobile_connect.png}}}
+        \only<2>{\fbox{\includegraphics[scale=0.15]<2-2>{images/mobile_message.png}}}
     
     \end{columns}
 \end{frame}
